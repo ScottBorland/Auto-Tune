@@ -1,0 +1,902 @@
+
+# ░█████╗░██╗░░░██╗████████╗░█████╗░░░░░░░████████╗██╗░░░██╗███╗░░██╗███████╗  
+# ██╔══██╗██║░░░██║╚══██╔══╝██╔══██╗░░░░░░╚══██╔══╝██║░░░██║████╗░██║██╔════╝  
+# ███████║██║░░░██║░░░██║░░░██║░░██║█████╗░░░██║░░░██║░░░██║██╔██╗██║█████╗░░  
+# ██╔══██║██║░░░██║░░░██║░░░██║░░██║╚════╝░░░██║░░░██║░░░██║██║╚████║██╔══╝░░  
+# ██║░░██║╚██████╔╝░░░██║░░░╚█████╔╝░░░░░░░░░██║░░░╚██████╔╝██║░╚███║███████╗  
+# ╚═╝░░╚═╝░╚═════╝░░░░╚═╝░░░░╚════╝░░░░░░░░░░╚═╝░░░░╚═════╝░╚═╝░░╚══╝╚══════╝  
+
+# ░██████╗██╗░░██╗░█████╗░██████╗░░██████╗
+# ██╔════╝██║░░██║██╔══██╗██╔══██╗██╔════╝
+# ╚█████╗░███████║██║░░██║██████╔╝╚█████╗░
+# ░╚═══██╗██╔══██║██║░░██║██╔═══╝░░╚═══██╗
+# ██████╔╝██║░░██║╚█████╔╝██║░░░░░██████╔╝
+# ╚═════╝░╚═╝░░╚═╝░╚════╝░╚═╝░░░░░╚═════╝░
+
+
+##  -- Auto-Tune Default Shops File --  ##
+
+##  Set the default / starting prices for the items you want available in the shop
+##  Info: Make sure you put a decimal point and two digits to create a double for the shop algorithim to accept and parse to a price-value
+##  Info: Most of these values will be almost useless once the economy has started, to use these values again delete the data.db file
+##  Info: Material names are available here: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+##  Info: To remove an item use /at remove <item-name> to remove it from the global map
+##  Options: 'price: <double>' set the defualt starting price of the item
+##  Options: 'locked: <boolean>' set the price to be locked or variable (variable by default).
+##  Options: 'sell-difference: <double>' set a custom sell-price-difference (default set in config).
+##  Options: 'max-buy': <integer> set a maximum quantity that can be purchased in a time-period
+##  Options: 'max-sell': <integer> set a maximum quantity that can be sold in a time-period
+##  Options: 'enchantment': <string> set an items enchantment
+##  Options: 'enchantment': <integer> set an items enchantment level
+
+
+  ##  Example:
+  ##  GRASS_BLOCK:
+  ##    price: 50.00
+  ##    locked: true      <- Example of a locked item
+  ##    sell-difference: 0.0    <- Example of a set sell-difference item
+  ##    max-buy: 10       <- Only 10 items can be bought each time-period - you can increase this on large servers
+  ##    max-sell: 12       <- Only 12 items can be sold each time-period - you can increase this on large servers
+  ##    enchantment: 'DAMAGE_ALL'     <- Example of set enchanted item - Note: Enchantment price calculation must be turned off!
+  ##    enchantment-level: 1      <- Enchantment level, look above
+
+shops:
+  COAL:
+    price: 15.00
+    max-buy: 80
+    max-sell: 115
+    section: 'Natural Resources'
+  COAL_ORE:
+    price: 30.00
+    max-buy: 50
+    max-sell: 90
+    section: 'Natural Resources'
+  IRON_INGOT:
+    price: 13.00
+    max-buy: 75
+    max-sell: 100
+    section: 'Natural Resources'
+  IRON_ORE:
+    price: 15.00
+    max-buy: 60
+    max-sell: 100
+    section: 'Natural Resources'
+  GOLD_INGOT:
+    price: 30.00
+    max-buy: 45
+    max-sell: 75
+    section: 'Natural Resources'
+  GOLD_ORE:
+    price: 32.50
+    max-buy: 40
+    max-sell: 90
+    section: 'Natural Resources'
+  DIAMOND:
+    price: 300.00
+    max-buy: 12
+    max-sell: 32
+    section: 'Natural Resources'
+  DIAMOND_ORE:
+    price: 550.00
+    max-buy: 5
+    max-sell: 12
+    section: 'Natural Resources'
+  LAPIS_LAZULI:
+    price: 18.00
+    max-buy: 128
+    max-sell: 256
+    section: 'Natural Resources'
+  LAPIS_ORE:
+    price: 35.00
+    max-buy: 64
+    max-sell: 80
+    section: 'Natural Resources'
+  EMERALD:
+    price: 150.00
+    max-buy: 12
+    max-sell: 32
+    section: 'Natural Resources'
+  EMERALD_ORE:
+    price: 250.00
+    max-buy: 6
+    max-sell: 32
+    section: 'Natural Resources'
+  QUARTZ:
+    price: 17.00
+    max-buy: 40
+    max-sell: 125
+    section: 'Natural Resources'
+  NETHER_QUARTZ_ORE:
+    price: 40.00
+    max-buy: 75
+    max-sell: 90
+    section: 'Natural Resources'
+  REDSTONE:
+    price: 9.00
+    max-buy: 80
+    max-sell: 128
+    section: 'Natural Resources'
+  REDSTONE_ORE:
+    price: 25.00
+    max-buy: 50
+    max-sell: 80
+    section: 'Natural Resources'
+  NETHERITE_INGOT:
+    price: 8000.00
+    max-buy: 1
+    max-sell: 2
+    section: 'Natural Resources'
+  NETHERITE_SCRAP:
+    price: 3000.00
+    max-buy: 2
+    max-sell: 4
+    section: 'Natural Resources'
+  GLOWSTONE_DUST:
+    price: 5.00
+    max-buy: 128
+    max-sell: 256
+    section: 'Natural Resources'
+  DIRT:
+    price: 0.5
+    max-buy: 512
+    max-sell: 1024
+    section: 'Blocks'
+  GRASS_BLOCK:
+    price: 4.00
+    max-buy: 128
+    max-sell: 256
+    section: 'Blocks'
+  MYCELIUM:
+    price: 8.00
+    max-buy: 75
+    max-sell: 100
+    section: 'Blocks'
+  COBBLESTONE:
+    price: 1.00
+    max-buy: 256
+    max-sell: 800
+    section: 'Blocks'
+  STONE:
+    price: 2.00
+    max-buy: 128
+    max-sell: 256
+    section: 'Blocks'
+  GRANITE:
+    price: 0.80
+    max-buy: 128
+    max-sell: 512
+    section: 'Blocks'
+  DIORITE:
+    price: 0.80
+    max-buy: 128
+    max-sell: 512
+    section: 'Blocks'
+  ANDESITE:
+    price: 1.00
+    max-buy: 128
+    max-sell: 512
+    section: 'Blocks'
+  GRAVEL:
+    price: 3.00
+    max-buy: 128
+    max-sell: 256
+    section: 'Blocks'
+  SAND:
+    price: 1.00
+    max-buy: 128
+    max-sell: 500
+    section: 'Blocks'
+  SANDSTONE:
+    price: 4.00
+    max-buy: 100
+    max-sell: 250
+    section: 'Blocks'
+  GLASS:
+    price: 3.00
+    max-buy: 90
+    max-sell: 200
+    section: 'Blocks'
+  SNOWBALL:
+    price: 1.50
+    max-buy: 128
+    max-sell: 512
+    section: 'Blocks'
+  CLAY_BALL:
+    price: 2.50
+    max-buy: 64
+    max-sell: 128
+    section: 'Blocks'
+  ICE:
+    price: 5.50
+    max-buy: 128
+    max-sell: 256
+    section: 'Blocks'
+  PRISMARINE:
+    price: 9.00
+    max-buy: 64
+    max-sell: 175
+    section: 'Blocks'
+  PRISMARINE_BRICKS:
+    price: 10.00
+    max-buy: 64
+    max-sell: 175
+    section: 'Blocks'
+  DARK_PRISMARINE:  
+    price: 12.50
+    max-buy: 64
+    max-sell: 175
+    section: 'Blocks'
+  OBSIDIAN:
+    price: 15.00
+    max-buy: 20
+    max-sell: 64
+    section: 'Blocks'
+  END_STONE:
+    price: 3.50
+    max-buy: 80
+    max-sell: 200
+    section: 'Blocks'
+  NETHERRACK:
+    price: 1.00
+    max-buy: 256
+    max-sell: 1024
+    section: 'Blocks'
+  NETHER_BRICKS:
+    price: 8.00
+    max-buy: 64
+    max-sell: 128
+    section: 'Blocks'
+  BLACKSTONE:
+    price: 2.25
+    max-buy: 64
+    max-sell: 100
+    section: 'Blocks'
+  SOUL_SAND:
+    price: 4.00
+    max-buy: 64
+    max-sell: 175
+    section: 'Blocks'
+  WHITE_WOOL:
+    price: 6.50
+    max-buy: 64
+    max-sell: 80
+    section: 'Blocks'
+  OAK_LOG:
+    price: 8.00
+    max-buy: 90
+    max-sell: 256
+    section: 'Blocks'
+  SPRUCE_LOG:
+    price: 8.50
+    max-buy: 90
+    max-sell: 256
+    section: 'Blocks'
+  BIRCH_LOG:
+    price: 8.50
+    max-buy: 90
+    max-sell: 256
+    section: 'Blocks'
+  DARK_OAK_LOG:
+    price: 8.75
+    max-buy: 90
+    max-sell: 256
+    section: 'Blocks'
+  ACACIA_LOG:
+    price: 8.25
+    max-buy: 90
+    max-sell: 256
+    section: 'Blocks'
+  JUNGLE_LOG:
+    price: 8.25
+    max-buy: 90
+    max-sell: 256
+    section: 'Blocks'
+  CACTUS:
+    price: 3.00
+    max-buy: 64
+    max-sell: 200
+    section: 'Farming'
+  VINE:
+    price: 2.00
+    max-buy: 64
+    max-sell: 256
+    section: 'Farming'
+  CARROT:
+    price: 4.00
+    max-buy: 80
+    max-sell: 256
+    section: 'Food'
+  EGG:
+    price: 3.50
+    max-buy: 32
+    max-sell: 128
+    section: 'Farming'
+  MELON_SLICE:
+    price: 1.75
+    max-buy: 85
+    max-sell: 175
+    section: 'Food'
+  POTATO:
+    price: 2.25
+    max-buy: 80
+    max-sell: 120
+    section: 'Food'
+  BREAD:
+    price: 4.50
+    max-buy: 64
+    max-sell: 75
+    section: 'Food'
+  APPLE:
+    price: 4.00
+    max-buy: 64
+    max-sell: 100
+    section: 'Food'
+  WHEAT:
+    price: 2.00
+    max-buy: 128
+    max-sell: 256
+    section: 'Farming'
+  SUGAR_CANE:
+    price: 1.50
+    max-buy: 164
+    max-sell: 256
+    section: 'Farming'
+  BEEF:
+    price: 2.50
+    max-buy: 64
+    max-sell: 150
+    section: 'Food'
+  PORKCHOP:
+    price: 2.25
+    max-buy: 64
+    max-sell: 150
+    section: 'Food'
+  CHICKEN:
+    price: 1.45
+    max-buy: 64
+    max-sell: 150
+    section: 'Food'
+  RABBIT:
+    price: 2.50
+    max-buy: 64
+    max-sell: 150
+    section: 'Food'
+  MUTTON:
+    price: 2.00
+    max-buy: 64
+    max-sell: 150
+    section: 'Food'
+  PUMPKIN:
+    price: 8.00
+    max-buy: 64
+    max-sell: 128
+    section: 'Farming'
+  COD:
+    price: 6.00
+    max-buy: 96
+    max-sell: 124
+    section: 'Food'
+  SALMON:
+    price: 7.50
+    max-buy: 90
+    max-sell: 120
+    section: 'Food'
+  COOKIE:
+    price: 12.00
+    max-buy: 64
+    max-sell: 96
+    section: 'Food'
+  RED_MUSHROOM:
+    price: 6.00
+    max-buy: 64
+    max-sell: 100
+    section: 'Farming'
+  BROWN_MUSHROOM:
+    price: 6.00
+    max-buy: 64
+    max-sell: 100
+    section: 'Farming'
+  WHEAT_SEEDS:
+    price: 1.25
+    max-buy: 80
+    max-sell: 200
+    section: 'Farming'
+  NETHER_WART:
+    price: 4.00
+    max-buy: 64
+    max-sell: 200
+    section: 'Farming'
+  FLINT:
+    price: 4.00
+    max-buy: 64
+    max-sell: 128
+    section: 'Other'
+  GUNPOWDER:
+    price: 12.50
+    max-buy: 64
+    max-sell: 128
+    section: 'Other'
+  LEATHER:
+    price: 20.00
+    max-buy: 64
+    max-sell: 128
+    section: 'Other'
+  INK_SAC:
+    price: 2.50
+    max-buy: 32
+    max-sell: 64
+    section: 'Other'
+  FEATHER:
+    price: 4.00
+    max-buy: 32
+    max-sell: 64
+    section: 'Other'
+  BONE:
+    price: 6.00
+    max-buy: 64
+    max-sell: 100
+    section: 'Other'
+  BONE_MEAL:
+    price: 2.00
+    max-buy: 64
+    max-sell: 90
+    section: 'Other'
+  STRING:
+    price: 4.00
+    max-buy: 64
+    max-sell: 100
+    section: 'Other'
+  ROTTEN_FLESH:
+    price: 0.50
+    max-buy: 64
+    max-sell: 128
+    section: 'Food'
+  SPIDER_EYE:
+    price: 7.00
+    max-buy: 64
+    max-sell: 128
+    section: 'Other'
+  SLIME_BALL:
+    price: 25.00
+    max-buy: 32
+    max-sell: 64
+    section: 'Other'
+  ENDER_PEARL:
+    price: 35.00
+    max-buy: 16
+    max-sell: 40
+    section: 'Other'
+  NETHER_STAR:
+    price: 12000.00
+    max-buy: 1
+    max-sell: 1
+    section: 'Other'
+  GHAST_TEAR:
+    price: 125.00
+    max-buy: 4
+    max-sell: 8
+    section: 'Other'
+  MAGMA_CREAM:
+    price: 50.00
+    max-buy: 16
+    max-sell: 32
+    section: 'Other'
+  BLAZE_ROD:
+    price: 45.00
+    max-buy: 8
+    max-sell: 32
+    section: 'Other'
+  ARROW:
+    price: 2.00
+    max-buy: 64
+    max-sell: 128
+    section: 'Other'
+  COCOA_BEANS:
+    price: 7.50
+    max-buy: 64
+    max-sell: 96
+    section: 'Farming'
+  NAME_TAG:
+    price: 50.00
+    max-buy: 8
+    max-sell: 16
+    section: 'Other'
+  CHORUS_FRUIT:
+    price: 1.25
+    max-buy: 64
+    max-sell: 128
+    section: 'Farming'
+  CHEST:
+    price: 20.00
+    max-buy: 30
+    max-sell: 64
+    section: 'Other'
+  TORCH:
+    price: 2.5
+    max-buy: 64
+    max-sell: 100
+    section: 'Blocks'
+  NOTE_BLOCK:
+    price: 36.0
+    max-buy: 16
+    max-sell: 32
+    section: 'Blocks'
+  FURNACE:
+    price: 8.5
+    max-buy: 32
+    max-sell: 48
+    section: 'Other'
+  TNT:
+    price: 125.0
+    max-buy: 16
+    max-sell: 32
+    section: 'Blocks'
+  SPONGE:
+    price: 60.00
+    max-buy: 32
+    max-sell: 128
+    section: 'Blocks'
+  PHANTOM_MEMBRANE:
+    price: 45.00
+    max-buy: 32
+    max-sell: 64
+    section: 'Other'
+  OAK_LEAVES:
+    price: 1.0
+    max-buy: 64
+    max-sell: 128
+    section: 'Blocks'
+  BIRCH_LEAVES:
+    price: 1.0
+    max-buy: 64
+    max-sell: 128
+    section: 'Blocks'
+  SPRUCE_LEAVES:
+    price: 1.0
+    max-buy: 64
+    max-sell: 128
+    section: 'Blocks'
+  JUNGLE_LEAVES:
+    price: 1.0
+    max-buy: 64
+    max-sell: 128
+    section: 'Blocks'
+  DARK_OAK_LEAVES:
+    price: 1.0
+    max-buy: 64
+    max-sell: 128
+    section: 'Blocks'
+  ACACIA_LEAVES:
+    price: 1.0
+    max-buy: 64
+    max-sell: 128
+    section: 'Blocks'
+  OAK_PLANKS:
+    price: 0.5
+    max-buy: 128
+    max-sell: 256
+    section: 'Blocks'
+  BIRCH_PLANKS:
+    price: 0.5
+    max-buy: 128
+    max-sell: 256
+    section: 'Blocks'
+  SPRUCE_PLANKS:
+    price: 0.5
+    max-buy: 128
+    max-sell: 256
+    section: 'Blocks'
+  JUNGLE_PLANKS:
+    price: 0.5
+    max-buy: 128
+    max-sell: 256
+    section: 'Blocks'
+  DARK_OAK_PLANKS:
+    price: 0.5
+    max-buy: 128
+    max-sell: 256
+    section: 'Blocks'
+  ACACIA_PLANKS:
+    price: 0.5
+    max-buy: 128
+    max-sell: 256
+    section: 'Blocks'
+  OAK_SAPLING:
+    price: 2.5
+    max-buy: 32
+    max-sell: 64
+    section: 'Farming'
+  BIRCH_SAPLING:
+    price: 2.5
+    max-buy: 32
+    max-sell: 64
+    section: 'Farming'
+  SPRUCE_SAPLING:
+    price: 2.5
+    max-buy: 32
+    max-sell: 64
+    section: 'Farming'
+  JUNGLE_SAPLING:
+    price: 2.5
+    max-buy: 32
+    max-sell: 64
+    section: 'Farming'
+  DARK_OAK_SAPLING:
+    price: 2.5
+    max-buy: 32
+    max-sell: 64
+    section: 'Farming'
+  ACACIA_SAPLING:
+    price: 2.5
+    max-buy: 32
+    max-sell: 64
+    section: 'Farming'
+  DISPENSER:
+    price: 58.0
+    max-buy: 8
+    max-sell: 16
+    section: 'Blocks'
+  CAKE:
+    price: 160.0
+    max-buy: 8
+    max-sell: 10
+    section: 'Food'
+  MILK_BUCKET:
+    price: 9.00
+    max-buy: 12
+    max-sell: 20
+    section: 'Other'
+  STICK:
+    price: 0.2
+    max-buy: 64
+    max-sell: 128
+    section: 'Other'
+  BOOK:
+    price: 28.0
+    max-buy: 32
+    max-sell: 48
+    section: 'Other'
+  WOODEN_PICKAXE:
+    price: 8.0
+    max-buy: 4
+    max-sell: 8
+    section: 'Tools'
+  WOODEN_AXE:
+    price: 7.5
+    max-buy: 4
+    max-sell: 8
+    section: 'Tools'
+  WOODEN_SWORD:
+    price: 6.5
+    max-buy: 4
+    max-sell: 8
+    section: 'Tools'
+  WOODEN_SHOVEL:
+    price: 3.5
+    max-buy: 4
+    max-sell: 8
+    section: 'Tools'
+  WOODEN_HOE:
+    price: 3.5
+    max-buy: 4
+    max-sell: 8
+    section: 'Tools'
+  STONE_PICKAXE:
+    price: 11.0
+    max-buy: 4
+    max-sell: 8
+    section: 'Tools'
+  STONE_AXE:
+    price: 10.5
+    max-buy: 4
+    max-sell: 8
+    section: 'Tools'
+  STONE_SWORD:
+    price: 9.0
+    max-buy: 4
+    max-sell: 8
+    section: 'Tools'
+  STONE_SHOVEL:
+    price: 5.0
+    max-buy: 4
+    max-sell: 8
+    section: 'Tools'
+  STONE_HOE:
+    price: 5.0
+    max-buy: 4
+    max-sell: 8
+    section: 'Tools'
+  GOLDEN_PICKAXE:
+    price: 12.0
+    max-buy: 3
+    max-sell: 8
+    section: 'Tools'
+  GOLDEN_AXE:
+    price: 11.5
+    max-buy: 3
+    max-sell: 8
+    section: 'Tools'
+  GOLDEN_SWORD:
+    price: 10.0
+    max-buy: 3
+    max-sell: 8
+    section: 'Tools'
+  GOLDEN_SHOVEL:
+    price: 6.0
+    max-buy: 3
+    max-sell: 8
+    section: 'Tools'
+  GOLDEN_HOE:
+    price: 6.0
+    max-buy: 3
+    max-sell: 8
+    section: 'Tools'
+  IRON_PICKAXE:
+    price: 18.0
+    max-buy: 3
+    max-sell: 6
+    section: 'Tools'
+  IRON_AXE:
+    price: 17.5
+    max-buy: 3
+    max-sell: 6
+    section: 'Tools'
+  IRON_SWORD:
+    price: 13.0
+    max-buy: 3
+    max-sell: 6
+    section: 'Tools'
+  IRON_SHOVEL:
+    price: 7.0
+    max-buy: 3
+    max-sell: 6
+    section: 'Tools'
+  IRON_HOE:
+    price: 7.0
+    max-buy: 3
+    max-sell: 6
+    section: 'Tools'
+  DIAMOND_PICKAXE:
+    price: 260.0
+    max-buy: 2
+    max-sell: 3
+    section: 'Tools'
+  DIAMOND_AXE:
+    price: 250.0
+    max-buy: 2
+    max-sell: 3
+    section: 'Tools'
+  DIAMOND_SWORD:
+    price: 180.0
+    max-buy: 2
+    max-sell: 3
+    section: 'Tools'
+  DIAMOND_SHOVEL:
+    price: 110.0
+    max-buy: 2
+    max-sell: 3
+    section: 'Tools'
+  DIAMOND_HOE:
+    price: 110.0
+    max-buy: 2
+    max-sell: 3
+    section: 'Tools'
+  LEATHER_HELMET:
+    price: 22.50
+    max-buy: 2
+    max-sell: 4
+    section: 'Tools'
+  LEATHER_CHESTPLATE:
+    price: 46.00
+    max-buy: 2
+    max-sell: 3
+    section: 'Tools'
+  LEATHER_LEGGINGS:
+    price: 25.50
+    max-buy: 2
+    max-sell: 3
+    section: 'Tools'
+  LEATHER_BOOTS:
+    price: 20.00
+    max-buy: 2
+    max-sell: 4
+    section: 'Tools'
+  IRON_HELMET:
+    price: 45.50
+    max-buy: 2
+    max-sell: 4
+    section: 'Tools'
+  IRON_CHESTPLATE:
+    price: 86.00
+    max-buy: 2
+    max-sell: 3
+    section: 'Tools'
+  IRON_LEGGINGS:
+    price: 65.50
+    max-buy: 2
+    max-sell: 3
+    section: 'Tools'
+  IRON_BOOTS:
+    price: 38.00
+    max-buy: 2
+    max-sell: 4
+    section: 'Tools'
+  GOLDEN_HELMET:
+    price: 40.50
+    max-buy: 2
+    max-sell: 4
+    section: 'Tools'
+  GOLDEN_CHESTPLATE:
+    price: 80.00
+    max-buy: 2
+    max-sell: 3
+    section: 'Tools'
+  GOLDEN_LEGGINGS:
+    price: 60.50
+    max-buy: 2
+    max-sell: 3
+    section: 'Tools'
+  GOLDEN_BOOTS:
+    price: 30.00
+    max-buy: 2
+    max-sell: 4
+    section: 'Tools'
+  DIAMOND_HELMET:
+    price: 425.50
+    max-buy: 2
+    max-sell: 4
+    section: 'Tools'
+  DIAMOND_CHESTPLATE:
+    price: 900.00
+    max-buy: 2
+    max-sell: 3
+    section: 'Tools'
+  DIAMOND_LEGGINGS:
+    price: 620.50
+    max-buy: 2
+    max-sell: 3
+    section: 'Tools'
+  DIAMOND_BOOTS:
+    price: 350.00
+    max-buy: 2
+    max-sell: 4
+    section: 'Tools'
+  FISHING_ROD:
+    price: 25.00
+    max-buy: 3
+    max-sell: 4
+    section: 'Tools'
+  BOW:
+    price: 28.00
+    max-buy: 3
+    max-sell: 4
+    section: 'Tools'
+  BUCKET:
+    price: 7.50
+    max-buy: 16
+    max-sell: 26
+    section: 'Tools'
+    
+##  Shop sections configuration
+sections:
+  'Natural Resources':
+    ##  Block that the section image is displayed as
+    block: 'IRON_ORE'
+    ##  Optional - set to disabled to disable the back button when running "/shop <shop-section>".
+    ##  This wont disable the back button when running just "/shop"
+    back-menu-button-enabled: true
+  'Blocks':
+    block: 'STONE'
+    back-menu-button-enabled: true
+  'Food':
+    block: 'COOKED_BEEF'
+    back-menu-button-enabled: true
+  'Farming':
+    block: 'OAK_SAPLING'
+    back-menu-button-enabled: true
+  'Tools':
+    block: 'DIAMOND_PICKAXE'
+    back-menu-button-enabled: true
+  'Other':
+    block: 'STICK'
+    back-menu-button-enabled: true
